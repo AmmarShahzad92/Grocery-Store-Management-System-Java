@@ -1,0 +1,25 @@
+[User Input]  ─┬─>  Login Credentials
+              ├─>  Product Information (Admin)
+              ├─>  Product Selection / Quantity (Customer)
+              ├─>  Address Details (Customer)
+              └─>  Order Status (Admin)
+
+
+Login System
+    └─> Authenticates → Grants Access → Loads Appropriate Menu
+
+Admin Operations:
+    ├─> Inputs Product → Stored in BST (ProductTree)
+    ├─> Views Orders → Reads from OrderQueue
+    └─> Updates Order → Writes to OrderQueue node
+
+Customer Operations:
+    ├─> Views Products → Reads from ProductTree
+    ├─> Adds to Cart → Linked List Node (Cart)
+    ├─> Adds to Wishlist → Linked List Node (Wishlist)
+    ├─> Views Recently Viewed → Stack (RecentlyViewed)
+    └─> Places Order:
+         ├─> Address Input → Used in Order Object
+         ├─> Cart → Wrapped in Order Object
+         ├─> Order → Pushed to OrderHistory Stack
+         └─> Order → Enqueued to OrderQueue
